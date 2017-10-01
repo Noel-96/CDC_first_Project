@@ -16,7 +16,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
+/**
+ * gbengist@gmail.com
+ * mercymarkus1796@gmail.com
+ * faithid10@gmail.com
+ *
+ *
+ * **/
     Button mEnter;
     EditText mBestField;
     EditText mNameField;
@@ -31,10 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
          mEnter= (Button) findViewById(R.id.EnterButton);
          mBestField = (EditText) findViewById(R.id.BestThingField);
-         mNameField = (EditText) findViewById(R.id.NameField);
          mEmptyError = (TextView) findViewById(R.id.EmptyFieldError);
          mNoError= (TextView) findViewById(R.id.NoErrorField);
-
          sBestField = mBestField.getText().toString();
          sNameField= mNameField.getText().toString();
 
@@ -51,14 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if (TextUtils.isDigitsOnly(mNameField.getText())){
-                    mNoError.setVisibility(View.VISIBLE);
+                    mNameField.setError("Digits are not allowed in this field");
                     }
                     else if(isNumeric(sNameField)){
-                    mNoError.setVisibility(View.VISIBLE);
+                    mNameField.setError("Digits are not allowed in this field");
                 }
-                    else {
-                      mNoError.setVisibility(View.INVISIBLE);
-                    }
 
             }
 
@@ -69,14 +70,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         mEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if (TextUtils.isEmpty(mNameField.getText()) || TextUtils.isEmpty(mBestField.getText())  ){
-                    mEmptyError.setVisibility(View.VISIBLE);
+                    mNameField.setError("The Fields are empty , please fill them ");
+                    mBestField.setError("The Fields are empty , please fill them ");
                 }
            else {
                Intent myIntent = new Intent(MainActivity.this, ResultActivity.class);

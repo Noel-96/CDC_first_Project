@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">How was your day</string>
+    <string name="feedbackemail">Praise</string>
+    <string name="feedbackbody">Gripe</string>
+    <string name="feedbackresponse">Suggestion</string>
+    <string name="feedbackbutton">Bug</string>
+    <string name="feedbacktitle">Bug</string>
+    <string name="feedbackname">Bug</string>
 </resources>
